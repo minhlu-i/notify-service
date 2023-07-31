@@ -1,7 +1,5 @@
 # Notify Service
 
-https://blog.bitsrc.io/notifications-system-design-how-we-integrated-it-into-our-infrastructure-f93f279c18a0
-
 ## Planning the integration
 
 1. Anything that happened in the system from the business point, can trigger notification(s).
@@ -22,3 +20,29 @@ https://blog.bitsrc.io/notifications-system-design-how-we-integrated-it-into-our
 6. Adding new settings for users to customize notifications is not a headache.
 7. Overall service is highly testable, so covering with integration/backend e2e tests is not time-consuming
 8. Easy to debug specific cases.
+
+## What we will need to have
+
+1. Trigger. We will need to have triggers that will produce notifications.
+
+   E.g. in an e-commerce business “order-created” event where we need to send notifications to the order owners, means buyer and seller, and maybe another notification to finance or whatever company department. Let’s consider we already have triggers from other services, in the form of events mentioned above.
+
+2. Template service(s) for building email messages based on templates, similar but maybe less complicated generators for other channels (Push, SMS ..). There are lots of open-source solutions for that in almost all the popular languages.
+
+3. Localization service for translations.
+
+    For example, we don’t want to persist a bunch of text in DB for showing notification history in the client app, but we want the app to build the text depending on the language and other parameters after the history is fetched to the client app. Same for the backend, for sending localized push we need to build localized push notifications using our translations. As we want to have localized notifications I assume our infrastructure already supports localization, and we already should be using some custom build or 3rd party service. In my case, our company already had localization service.
+
+4. Service that handles the trigger, does the core logic and is capable of sending and/or persisting notifications.
+
+5. Provider integrations. Email, APNS for ios, FCM for Android, etc. depending on what providers we need.
+
+## System design
+
+![System design](documents/images/system.png)
+
+## Service Architecture
+
+### Database design
+
+![database design](documents/images/database_design.png)
