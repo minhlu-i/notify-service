@@ -39,10 +39,10 @@
 
 ## System design
 
-![System design](documents/images/system.png)
+![System design](assets/images/system.png)
 
 ## Service Architecture
 
 ### Database design
 
-![database design](documents/images/database_design.png)
+![database design](assets/images/database_design.png)
