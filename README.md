@@ -30,5 +30,5 @@
 
 ## Reference:
 
-[Designing a Scalable Notification System in a System Design Interview](https://www.linkedin.com/pulse/design-notification-system-omar-ismail/)
-[Design a Notification System!](https://blog.devgenius.io/a-notification-system-is-a-critical-part-of-many-applications-and-platforms-enabling-users-to-stay-49540ac45a89)
+- [Designing a Scalable Notification System in a System Design Interview](https://www.linkedin.com/pulse/design-notification-system-omar-ismail/)
+- [Design a Notification System!](https://blog.devgenius.io/a-notification-system-is-a-critical-part-of-many-applications-and-platforms-enabling-users-to-stay-49540ac45a89)
