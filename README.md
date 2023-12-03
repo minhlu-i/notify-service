@@ -10,6 +10,7 @@
 6. Users should have access to their previous/old notifications (AKA notifications or notification center).
 7. Some push or email notifications shouldn’t be recorded/visible in the user’s notification center (such as a marketing alert about a discount, or another short-living alert), and vice versa, some notifications that are visible in the user’s notification center, shouldn’t have produced an alert such as a push notification (or an email have been sent).
 8. Users should be able to customize the notifications consumption (frequency, categories, channels ..), for example, set a preferred channel for some type of notifications, or even turn that off.
+9. User can access to their service APIs with JWT token.
 
 ## Technique
 
@@ -17,6 +18,10 @@
 2. Storage: Cassandra. For Schema Flexibility, Write-heavy System, Highly available System.
 3. APIs: Rust.
 4. Notification delivery.
+   - Email.
+   - Push Notification (FCM).
+   - In-app notification.
+   - Webhook.
 
 ## System design
 
